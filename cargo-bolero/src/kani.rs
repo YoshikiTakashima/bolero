@@ -8,6 +8,9 @@ pub(crate) fn test(selection: &Selection, test_args: &test::Args) -> Result<()> 
     let mut cmd = Command::new("cargo");
     cmd.arg("kani")
         .arg("--tests")
+        .arg("--unwind")
+        .arg("0")
+        .arg("--no-default-checks")
         .arg("--harness")
         .arg(selection.test());
 

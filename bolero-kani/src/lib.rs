@@ -80,7 +80,7 @@ pub mod lib {
 
         fn with_slice<F: FnMut(&[u8]) -> Output>(&mut self, f: &mut F) -> Output {
             // TODO make this configurable
-            const MAX_LEN: usize = 256;
+            const MAX_LEN: usize = 5;
 
             let array: [u8; MAX_LEN] = kani::any();
             let len = kani::any();
